@@ -18,7 +18,11 @@
 			$email_error = "See väli on kohustuslik";
 			
 		}
-		//if( empty($_POST[}]))
+		if( empty($_POST["password"]) ) {
+			
+			//jah oli tühi
+			$password_error = "See väli on kohustuslik";
+		}
 		
 	}
 ?>
@@ -30,7 +34,7 @@
 		<h2>Login</h2>
 		<form action="login.php" method="post">
 		<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
-		<input name="password" type="password" placeholder="Parool" > <br><br>
+		<input name="password" type="password" placeholder="Parool" > <?php echo $password_error; ?> <br><br>
 		<input type="submit" value="Logi sisse"> <br><br>
 		</form>
 		
